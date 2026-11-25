@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#101827">
+<title>RG GAMER BOY FF — Sign in</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+<header class="topbar"><a class="brand" href="./" aria-label="RG GAMER BOY FF home"><img class="brand-logo" src="https://i.supaimg.com/cc740f2b-876c-4dd7-bbf2-16d636413b82/85320e1a-9a75-4178-90bb-a7f01267a661.png" alt="RG logo"><span>RG GAMER BOY FF</span></a><span class="secure" aria-label="Selected country ping"><span class="dot" id="pingDot" data-state="idle"></span><span id="countryPing" aria-live="polite">Select country</span></span></header>
+<main class="shell">
+<section class="card">
+<div class="hero-logo-wrap"><img class="hero-logo" src="https://i.supaimg.com/cc740f2b-876c-4dd7-bbf2-16d636413b82/85320e1a-9a75-4178-90bb-a7f01267a661.png" alt="RG GAMER BOY FF logo"></div>
+<div class="eyebrow">OFFICIAL ACCOUNT ACCESS</div>
+<h1 id="welcomeTitle">Welcome</h1>
+<p class="subtitle" id="welcomeSubtitle">Choose how you want to continue.</p>
+<div id="status" class="status" role="status" aria-live="polite"></div>
+<section id="regionStage" class="region-stage" hidden aria-labelledby="regionTitle">
+  <div class="region-heading">
+    <div class="region-kicker">ACCOUNT SETUP</div>
+    <h2 id="regionTitle">Select Your Region</h2>
+    <p>Choose your region first, then select your country.</p>
+  </div>
+  <div id="regionChoices" class="region-choices" aria-label="Available regions"></div>
+  <div id="countryArea" class="country-area" hidden>
+    <div class="country-heading"><strong id="countryTitle">Select Country</strong><span id="countryCount"></span></div>
+    <div id="countryChoices" class="country-choices" aria-label="Available countries"></div>
+  </div>
+  <button id="regionContinueBtn" class="primary-btn region-continue" disabled>Continue</button>
+  <p class="region-hint">You can change your region and country later.</p>
+</section>
+<div id="loginStage" hidden>
+<button id="changeRegionBtn" class="change-region-btn" type="button">Change Region / Country</button>
+<div id="authOptions">
+<button id="googleBtn" class="auth-btn google-btn">
+<svg class="google-icon" viewBox="0 0 48 48" aria-hidden="true"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.93c-.58 2.96-2.25 5.48-4.73 7.18l7.62 5.9c4.45-4.11 7.16-10.16 7.16-17.55z"/><path fill="#FBBC05" d="M10.53 28.59A14.4 14.4 0 0 1 9.75 24c0-1.59.27-3.13.76-4.59l-7.98-6.19A23.9 23.9 0 0 0 0 24c0 3.87.93 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.9-5.9l-7.62-5.9c-2.11 1.41-4.81 2.25-8.28 2.25-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg>
+<span>Continue with Google</span>
+</button>
+<div class="separator"><span>OR</span></div>
+<button id="guestBtn" class="auth-btn guest-btn"><span class="btn-symbol">◉</span><span>Continue as Guest</span></button>
+<div class="separator"><span>OR</span></div>
+<a class="auth-btn username-btn" href="https://rggamerboyff01.github.io/FREE-FIRE-PRIVATE-SERVER-2023/" target="_blank" rel="noopener"><span class="btn-symbol">♙</span><span>Continue with Username &amp; Password</span><span class="lock">↗</span></a>
+</div>
+<div id="signedIn" class="signed-in" hidden>
+<button id="continueBtn" class="primary-btn">Continue</button>
+<button id="deleteAccountBtn" class="delete-account-btn" hidden>Delete Account</button>
+<button id="guestLogoutBtn" class="logout-btn" hidden>Logout</button>
+</div>
+</div>
+<p class="fineprint">By continuing, you confirm that you have reviewed and accepted our policies.</p>
+</section>
+</main>
+<footer class="footer">
+<div class="footer-links"><a href="./privacy.html">Privacy Policy</a><span>·</span><a href="./terms.html">Terms of Service</a></div>
+<p>© <span id="year"></span> RG GAMER BOY FF</p>
+</footer>
+<div id="consentModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="consentTitle">
+<div class="modal-card">
+<div class="modal-icon">✓</div><h2 id="consentTitle">Before you continue</h2>
+<p>Please check our Privacy Policy and Terms of Service to understand how this website works and how account information is handled.</p>
+<div class="policy-links"><a href="./privacy.html" target="_blank" rel="noopener">Read Privacy Policy ↗</a><a href="./terms.html" target="_blank" rel="noopener">Read Terms of Service ↗</a></div>
+<label class="check-row"><input type="checkbox" id="acceptBox"><span>I have read and agree to the Privacy Policy and Terms of Service.</span></label>
+<button id="acceptBtn" class="primary-btn" disabled>Continue</button>
+<small class="modal-note">You must select the checkbox to use the sign-in options.</small>
+</div></div>
+<script type="module" src="./app.js"></script>
+</body></html>

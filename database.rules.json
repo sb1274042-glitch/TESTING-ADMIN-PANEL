@@ -1,0 +1,42 @@
+{
+  "rules": {
+    ".read": false,
+    ".write": false,
+    "users": {
+      "$uid": {
+        "profile": {
+          ".read": "auth != null && auth.uid === $uid",
+          ".write": "auth != null && auth.uid === $uid",
+          ".validate": "newData.hasChildren(['uid', 'provider', 'displayName', 'lastSignInAt'])",
+          "uid": {
+            ".validate": "newData.isString() && newData.val() === auth.uid"
+          },
+          "provider": {
+            ".validate": "newData.isString() && (newData.val() === 'google.com' || newData.val() === 'anonymous')"
+          },
+          "displayName": {
+            ".validate": "newData.isString() && newData.val().length <= 100"
+          },
+          "email": {
+            ".validate": "newData.val() === null || (newData.isString() && newData.val().length <= 254)"
+          },
+          "photoURL": {
+            ".validate": "newData.val() === null || (newData.isString() && newData.val().length <= 2048)"
+          },
+          "lastSignInAt": {
+            ".validate": "newData.isNumber()"
+          },
+          "$other": {
+            ".validate": false
+          },
+          "region": {
+            ".validate": "newData.isString() && (newData.val() === 'Asia' || newData.val() === 'North America' || newData.val() === 'South America')"
+          },
+          "country": {
+            ".validate": "newData.isString() && newData.val().length <= 80"
+          }
+        }
+      }
+    }
+  }
+}
