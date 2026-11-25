@@ -1,2 +1,0 @@
-# TESTING-ADMIN-PANEL
-Admin panel
